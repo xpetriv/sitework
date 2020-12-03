@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+  <aside>
+      <img src="{% static 'main/img/work.png' %}" alt="Лого">
+      <span class="logo">Work.it</span>
+      <h3>Навігація</h3>
+      <ul>
+        <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Головна</li></a>
+        <a href="{% url 'about' %}"><li><i class="far fa-address-card"></i> Про нас</li></a>
+        <a href="{% url 'jobs_home' %}"><li><i class="far fa-id-badge"></i> Пошук роботи</li></a>
+        <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Знайти роботу</button></li></a>
+      </ul>
+  </aside>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  
+</body>
+</html>

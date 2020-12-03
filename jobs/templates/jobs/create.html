@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма заповнення оголошень{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма заповнення оголошень</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.city }}<br>
+            {{ form.full_text }}<br>
+            {{ form.published_date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Розмістити оголошення</button>
+        </form> 
+    </div>
+{% endblock %}
